@@ -1,4 +1,6 @@
-﻿const express = require('express');
+﻿import express from "express";
+import {v4} from "uuid"
+
 const app = express();
 
 const cafes = require("./cafes.json")
@@ -71,4 +73,4 @@ app.use("*", (req, res) => {
     res.status(404).send({ message: "La ruta que intenta consultar no existe" })
 })
 
-module.exports = app
+export default app;
