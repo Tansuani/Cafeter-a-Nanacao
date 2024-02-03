@@ -3,7 +3,7 @@ import {v4} from "uuid"
 
 const app = express();
 
-const cafes = require("./cafes.json")
+const cafes = require("../cafes.json")
 
 app.listen(3000, console.log("SERVER ON"))
 

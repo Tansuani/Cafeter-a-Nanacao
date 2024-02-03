@@ -1,7 +1,15 @@
 import request from "supertest";
 
-import server from "../index";
+import index from "../src/index";
 
-describe("Operaciones CRUD de cafes", () => {
+describe("Get ../cafes", () => {
+    it("sould respond with a 200 status" , async () => {
+        const response = await request(index).get("/cafes").send()
+        expect(response.status).toBe(200)
+    })
+    it("should answer with an array", async () => {
+        const response = await request(index).get("/cafes")
+        expect(response.body).toBeInstanceOf(Array);
+    })
 
 });
